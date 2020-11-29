@@ -20,8 +20,10 @@ proc iterationLogic(): Future[void] {. async .} =
 proc sidecarThread() : void {. thread .} =
   waitFor iterationLogic()
 
-proc main(): void =
-  spawn sidecarThread()
+proc kinter(): Future[void] {. async .} =
   echo stdin.readLine()
+
+proc main(): void =
+  waitFor(wait(kinter(), 3000.milliseconds))
 
 main()
