@@ -11,4 +11,4 @@ bin           = @["pomo"]
 # Dependencies
 
 requires "nim >= 1.4.0"
-requires https://github.com/status-im/nim-chronos.git
+requires "https://github.com/status-im/nim-chronos.git"
